@@ -3,6 +3,10 @@
 
 using namespace std;
 
+void printline() {
+    cout << "TARGET is here\n";
+}
+
 class Card {
     public:
         string cName;
@@ -11,10 +15,11 @@ class Card {
         Card() {
             num = 1999;
             cName = giveName();
+            printline();
         }
 
         string giveName() {
-            string name = "TARGET";
+            string name = "TARGET1999";
             return name;
         }
 };
@@ -22,5 +27,5 @@ class Card {
 int main() {
     Card c;
 
-    cout << c.cName << endl;
+    cout << c.giveName() << endl;
 }
