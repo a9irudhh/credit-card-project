@@ -4,12 +4,9 @@
 
 using namespace std;
 
-int randomGen() {
-    random_device rd; // Obtain a random number from hardware
-    mt19937 eng(rd()); // Seed the generator
-    uniform_int_distribution<> distr(0, 9); // Define the range
-
-    return distr(eng); // Generate and return the number
+int randomNum() {
+    
+    return rand() % 10;
 }
 
 class Card
@@ -22,8 +19,19 @@ protected:
 public:
     Card()
     {
-        cardNo;
+        for (int x=0; x<16; x++)
+            cardNo.append(to_string(randomNum()));
+
+        string temp = "";
+        for (int x=0; x<3; x++)
+            temp.append(to_string(randomNum()));
+        
+        cvv = stoi(temp);
     }
+
+    
+
+    friend int randomNum();
 
     string expireDate()
     {
@@ -60,11 +68,17 @@ public:
         expiryDate = expireDate();
         cout << expiryDate;
     }
+    void displayCard() {
+        cout << "Card No: " << cardNo << endl;
+        cout << "CVV: " << cvv << endl;
+        cout << "Exp Date: " << expiryDate << endl;
+    }
 };
 
 int main()
 {
+    srand(time(NULL));
     // expiryDate();
-    // CreditCard c;
-    cout << randomGen();
+    CreditCard c;
+    c.displayCard();
 }
