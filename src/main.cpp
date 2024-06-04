@@ -3,10 +3,11 @@
 #include <random>
 #include <exception>
 
+#include <bits/stdc++.h>
+
 using namespace std;
 
 int randomNum() {
-    
     return rand() % 10;
 }
 
@@ -72,6 +73,7 @@ class CreditCard {
         for (int x=0; x<3; x++)
             temp.append(to_string(randomNum()));
         cvv = stoi(temp);
+
         
         //EXPIRE DATE
         expiryDate = expireDate();
@@ -82,6 +84,9 @@ class CreditCard {
         cout << "CVV: " << cvv << endl;
         cout << "Exp Date: " << expiryDate << endl;
     }
+
+    }    
+
 
     void genaratePIN() {
         // code to generate pin for credit card
@@ -234,10 +239,147 @@ class CardHolder {
 
 }
 
+
+class cardHolder
+{
+    string name;
+    string address;
+    string email;
+    string phoneNo;
+    Card card;
+
+    public :
+    cardHolder(string name, string address, string email, string phoneNo)
+    {
+        this->name = name;
+        this->address = address;
+        this->email = email;
+        this->phoneNo = phoneNo;
+    }
+
+    int addCard()
+    {
+        return 0;
+    }
+
+    int removeCard()
+    {
+        return 0;
+    }
+
+    void viewTransactions()
+    {
+    }
+};
+
+class Bank
+{
+    string name;
+    string address;
+    string email;
+    string phoneNo;
+    string ifsc;
+
+    public :
+    Bank(string name, string address, string email, string phoneNo)
+    {
+        this->name = name;
+        this->address = address;
+        this->email = email;
+        this->phoneNo = phoneNo;
+    }
+
+    int authorizeTransaction()
+    {
+        return 0;
+    }
+
+    int authorizeRefund()
+    {
+        return 0;
+    }
+
+    int authorizeCard()
+    {
+        return 0;
+    }
+
+    int addCardHolder()
+    {
+        return 0;
+    }
+
+    int removeCardHolder()
+    {
+        return 0;
+    }
+
+    void viewTransactions()
+    {
+    }
+};
+
+class Merchant
+{
+    string name;
+    string address;
+    string email;
+    string phoneNo;
+    vector<cardHolder> cardHolders;
+
+    public :
+    Merchant(string name, string address, string email, string phoneNo)
+    {
+        this->name = name;
+        this->address = address;
+        this->email = email;
+        this->phoneNo = phoneNo;
+    }
+
+    int initiateTransaction()
+    {
+        return 0;
+    }
+
+    int verifyMerchant()
+    {
+        return 0;
+    }
+};
+
+
+class Transactions{
+    string transactionId;
+    string transactionDate;
+    string transactionTime;
+    string transactionType;
+    string transactionAmount;
+    string transactionStatus;
+    
+    public:
+    Transactions(string transactionId, string transactionDate, string transactionTime, string transactionType, string transactionAmount, string transactionStatus){
+        this->transactionId = transactionId;
+        this->transactionDate = transactionDate;
+        this->transactionTime = transactionTime;
+        this->transactionType = transactionType;
+        this->transactionAmount = transactionAmount;
+        this->transactionStatus = transactionStatus;
+    }
+
+    int processTransaction()
+    {
+        return 0;
+    }
+
+    int validateTransaction()
+    {
+        return 0;
+    }
+
+};
+
+
 int main()
 {
-    srand(time(NULL));
-    // expiryDate();
-    CreditCard c;
-    c.displayCard();
+    return 0;
 }
