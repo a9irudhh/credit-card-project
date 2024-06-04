@@ -5,10 +5,7 @@
 
 using namespace std;
 
-class ChutiyaAniSK: public runtime_error {
-    public:
-        ChutiyaAniSK(): runtime_error("SIMP HSM") {}
-};
+
 
 class CustomError: public runtime_error {
     public:
