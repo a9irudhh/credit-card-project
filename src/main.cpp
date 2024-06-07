@@ -153,11 +153,11 @@ class SilverCard: public CreditCard {
         string cName;
         int rewardPoints;
 
-        SilverCard() {
-            cName = "Silver Card";
-            multipler = 0.01;
-            rewardPoints = 0;
-        }
+        // SilverCard() {
+        //     cName = "Silver Card";
+        //     multipler = 0.01;
+        //     rewardPoints = 0;
+        // }
 };
 
 class GoldCard: public CreditCard {
@@ -165,11 +165,11 @@ class GoldCard: public CreditCard {
         string cName;
         int rewardPoints;
 
-        GoldCard() {
-            cName = "Gold Card";
-            multipler = 0.02;
-            rewardPoints = 0;
-        }
+        // GoldCard() {
+        //     cName = "Gold Card";
+        //     multipler = 0.02;
+        //     rewardPoints = 0;
+        // }
 };
 
 
@@ -179,11 +179,11 @@ class PlatinumCard: public CreditCard {
         double multipler;
         int rewardPoints;
 
-        PlatinumCard() {
-            cName = "Platinum Card";
-            multipler = 0.05;
-            rewardPoints = 0;
-        }
+        // PlatinumCard() {
+        //     cName = "Platinum Card";
+        //     multipler = 0.05;
+        //     rewardPoints = 0;
+        // }
 };
 
 class CardHolder {
@@ -196,23 +196,23 @@ class CardHolder {
         CreditCard* CurrCard;
         int creditScore;
 
-        CardHolder(string n, string a, string e, string p, int c): name(n), address(a), email(e), phoneNo(p), creditScore(c) {}
-        {
-            if(c>800)
-                //allocate platinmum
-            else if(c>675)
-                //allocate gold
-            else
-                //allocate silver
+        // CardHolder(string n, string a, string e, string p, int c): name(n), address(a), email(e), phoneNo(p), creditScore(c) {}
+        // {
+        //     // if(c>800)
+        //     //     //allocate platinmum
+        //     // else if(c>675)
+        //     //     //allocate gold
+        //     // else
+        //     //     //allocate silver
 
-            // add the card to Cards vector as well
-        }
+        //     // // add the card to Cards vector as well
+        // }
 
         void pay(string receiver, double amt) {
             try {
                 if(CurrCard->outstandingBalance + amt <= CurrCard->spendLimit) {
                     CurrCard->outstandingBalance += amt;
-                    CurrCard->statement.pushback(Transaction(receiver,amt));
+                    CurrCard->statement.push_back(Transaction(receiver,amt));
                 }
                 else {
                     throw INSUFFICIENT_BALANCE();
@@ -224,7 +224,7 @@ class CardHolder {
             }
         }
 
-}
+};
 
 
 class cardHolder
@@ -233,16 +233,16 @@ class cardHolder
     string address;
     string email;
     string phoneNo;
-    Card card;
+    CreditCard card;
 
     public :
-    cardHolder(string name, string address, string email, string phoneNo)
-    {
-        this->name = name;
-        this->address = address;
-        this->email = email;
-        this->phoneNo = phoneNo;
-    }
+    // cardHolder(string name, string address, string email, string phoneNo)
+    // {
+    //     this->name = name;
+    //     this->address = address;
+    //     this->email = email;
+    //     this->phoneNo = phoneNo;
+    // }
 
     int addCard()
     {
