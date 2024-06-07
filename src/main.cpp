@@ -1,20 +1,9 @@
-#include <iostream>
-#include <ctime>
-#include <random>
-#include <exception>
-
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int randomNum() {
     return rand() % 10;
 }
-
-
-
-
-
 
 class INVALID_PIN: public runtime_error {
     public:
@@ -30,7 +19,6 @@ class INSUFFICIENT_BALANCE: public runtime_error {
     public:
         INSUFFICIENT_BALANCE(): runtime_error("Insufficient Amount") {}
 };
-
 
 
 class Transaction {
@@ -53,7 +41,7 @@ class CreditCard {
         double spendLimit;
         double outstandingBalance;
         string expiryDate;
-        virtual int multipler;
+        int multipler;
         vector <Transaction> statement;
 
     friend int randomNum();
@@ -84,8 +72,6 @@ class CreditCard {
         cout << "CVV: " << cvv << endl;
         cout << "Exp Date: " << expiryDate << endl;
     }
-
-    }    
 
 
     void genaratePIN() {
@@ -190,6 +176,7 @@ class GoldCard: public CreditCard {
 class PlatinumCard: public CreditCard {
     public:
         string cName;
+        double multipler;
         int rewardPoints;
 
         PlatinumCard() {

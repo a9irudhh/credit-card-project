@@ -1,66 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class CardHolder
-{
-    string name;
-    string address;
-    string email;
-    string phoneNo;
 
-    public :
-    CardHolder(string name, string address, string email, string phoneNo)
-    {
-        this->name = name;
-        this->address = address;
-        this->email = email;
-        this->phoneNo = phoneNo;
-    }
-
-};
-
-void viewMenu()
-{
-
-    return;
-}
-
-void newUserMenu()
-{
-    
-    return;
-}
 int main()
 {
-    while (true)
+    int choice;
+    do
     {
-        int ch;
-        viewMenu();
-        cin >> ch;
+        // viewMenu();
+        cin >> choice;
 
-        switch (ch)
+        switch (choice)
         {
         case 0:
-            cout << "Shutting Down" << endl;
-            exit(0);
+            cout << "Shutting Down.." << endl;
             break;
         case 1:
-            //New user
-            newUserMenu();
-            
+            // New user
+            // newUserMenu();
 
             break;
         case 2:
-            //renewal or replacement
+            // renewal or replacement
+            // replacementMenu();
             break;
         case 3:
             // transaction
+            // transactionMenu();
             break;
         case 4:
             // monthly statement generation
+            // statementGenMenu();
         default:
             break;
         }
-    }
+    } while (choice != 0);
+
     return 0;
 }
